@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}Gestion des stocks  {% endblock %}
+
+{% block content %}
+ici on affiche les stocks et propose l'ajout de nouveau livres
+    <form id="myForm" class="text-center">
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-book"></i></span>
+            <input type="search" class="form-control" id="books" placeholder="Renseignez le titre du livre ...">
+        </div>
+
+
+
+        <button  class="btn btn-primary" style="margin-top: 20px;">Chercher</button>
+    </form>
+
+    <div id="result" class="col-md-12 text-center">
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $("#myForm").submit(function(){
+        var search = $("#books").val();
+
+        if (search ==='')
+        {
+            document.getElementById('result').innerHTML("Veuillez entrer un livre");
+        }
+        else {
+            var url ='';
+            var img ='';
+            var type ='';
+
+            var title = '';
+            var author = '';
+            var id1 ='';
+            var btn ='';
+            $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,
+                function (response) {
+                console.log(response);
+
+                    for (i=0; i<response.items.length; i++){
+    title=$('<h2 class="center-align white-text ">' + response.items[i].volumeInfo.title + '</h2>');
+    author=$('<h5 class="center-align white-text">' + response.items[i].volumeInfo.authors + '</h5>');
+    type=$('<h5 class="center-align white-text">' + response.items[i].volumeInfo.categories + '</h5>');
+                         id1 = response.items[i].id;
+                        img=$('<img class="aligning card z-dept-5 margin-bottom" id="dynamic"><br>' +
+                            '<a href='+response.items[i].volumeInfo.infoLink+'>' +
+        '</a>');
+                        btn=$('<a id="imagebutton" class="btn btn-success" >' +"Ajouter" + '</a>');
+                        url = response.items[i].volumeInfo.imageLinks.thumbnail;
+    var urlRep = "{{ path('add_stock', {'id': 'idBook'}) }}".replace('idBook', id1);
+    img.attr('src', url);
+    btn.attr('href', urlRep);
+    title.appendTo("#result");
+    author.appendTo("#result");
+    type.appendTo('#result');
+    img.appendTo("#result");
+    btn.appendTo("#result");
+}             });
+        }
+        return false;
+    });
+
+});
+    </script>
+{% endblock %}

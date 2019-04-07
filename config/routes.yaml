@@ -1,0 +1,25 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+main:
+    path: /main
+    controller: App\Controller\MainController::index
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+app_logout:
+    path: /logout
+    methods: GET
+
+stocks:
+    path: /stocks
+    controller: App\Controller\StocksController::index
+
+add_stock:
+    path: /stocks/add/{id}
+    controller: App\Controller\AddStockController::index
+    requirements:
+        id: "[^/]+"
