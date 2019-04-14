@@ -1,3 +1,4 @@
+{% extends 'style/starter.html.twig' %}
 {% block header %}Ajouter  {% endblock %}
 
 {% block content %}
@@ -8,6 +9,7 @@
                 <h2 class="page-header">
                     <i class="fa fa-globe"></i> AdminLTE, Inc.
                     <small class="pull-right">Date: 2/10/2014</small>
+                    {{ stock }}
                 </h2>
             </div>
             <!-- /.col -->
@@ -26,8 +28,9 @@
             </div>
             <!-- /.col -->
             <div class="col-sm-4 invoice-col">
-                <b>Stock</b><br>
-
+                <b>Stock actuel : {{ stock }} exemplaires</b><br>
+                {{ form(form) }}   <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Ajouter
+                </button>
             </div>
             <!-- /.col -->
         </div>
@@ -35,9 +38,8 @@
 
         <!-- Table row -->
         <div class="row">
-            <div class="col-xs-12 table-responsive">
-         description
-            </div>
+         <p id="description"></p>
+
             <!-- /.col -->
         </div>
         <!-- this row will not appear when printing -->
@@ -65,8 +67,10 @@
                     document.getElementById("title").innerHTML = response.items[0].volumeInfo.title;
                     document.getElementById("author").innerHTML = response.items[0].volumeInfo.authors;
                     document.getElementById("date").innerHTML = response.items[0].volumeInfo.publishedDate;
-                    url = response.items[0].volumeInfo.imageLinks.thumbnail
+                    url = response.items[0].volumeInfo.imageLinks.thumbnail;
                     document.getElementById("image").setAttribute("src", url);
+                    document.getElementById("description").innerHTML = response.items[0].volumeInfo.description;
+
                 });
         });
     </script>

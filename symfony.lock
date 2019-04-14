@@ -2,6 +2,9 @@
     "almasaeed2010/adminlte": {
         "version": "v2.4.3"
     },
+    "ci/restclientbundle": {
+        "version": "2.0.3"
+    },
     "composer/installers": {
         "version": "v1.6.0"
     },

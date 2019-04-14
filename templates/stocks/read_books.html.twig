@@ -1,0 +1,54 @@
+{% extends 'style/starter.html.twig' %}
+{% block css %}
+    <link rel="stylesheet"
+          href="{{ asset('style/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+{% endblock %}
+{% block header %}<a href="{{ path('stocks') }}" class="btn btn-success">Nouveau Livre</a> {% endblock %}
+{% block content %}
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur(s)</th>
+                <th>Publication</th>
+                <th>stock</th>
+                <th>Gérer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.label }}</td>
+                <td>{% for author in book.author %}
+                    {{ author }}
+                    {% endfor %}
+                </td>
+                <td>{{ book.publicationDate |date('Y-m-d')  }}</td>
+                <td> {{ book.stock }}</td>
+                <td><button class="btn btn-primary">Gérer</button></td>
+            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('style/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('style/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+            })
+        })
+    </script>
+{% endblock %}

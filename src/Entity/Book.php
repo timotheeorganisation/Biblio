@@ -41,6 +41,16 @@ class Book
      */
     private $stock;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $idApi;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +112,30 @@ class Book
     public function setStock(int $stock): self
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getIdApi(): ?string
+    {
+        return $this->idApi;
+    }
+
+    public function setIdApi(string $idApi): self
+    {
+        $this->idApi = $idApi;
 
         return $this;
     }
