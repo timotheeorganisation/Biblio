@@ -3,29 +3,30 @@
     <link rel="stylesheet"
           href="{{ asset('style/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 {% endblock %}
-{% block header %}<a href="{{ path('stocks') }}" class="btn btn-success">Nouveau Livre</a> {% endblock %}
+{% block header %}
+    <a href="{{ path('add_subscription') }}" class="btn btn-success">Ajouter un Abonnement</a> {% endblock %}
 {% block content %}
     <div class="box-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th>Titre</th>
-                <th>Auteur(s)</th>
-                <th>Publication</th>
-                <th>stock</th>
+                <th>Abonnement</th>
+                <th>Prix Mensuel</th>
+                <th>Durée</th>
+                <th>Nombre d'abonnés</th>
                 <th>Gérer</th>
             </tr>
             </thead>
             <tbody>
-            {% for book in books %}
+            {% for abo in subscription %}
                 <tr>
-                    <td>{{ book.label }}</td>
-                    <td>  {{ book.author }}
+                    <td>{{ abo.label }}</td>
+                    <td>  {{ abo.price }}
                     </td>
-                    <td>{{ book.publicationDate |date('Y-m-d') }}</td>
-                    <td> {{ book.stock }}</td>
+                    <td>{{ abo.duration }}</td>
+                    <td>nbr</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ path('manage_book_stock', {'id': book.id} ) }}">Gérer
+                        <a class="btn btn-primary" href="{{ path('update_subscription', {'id': abo.id} ) }}">Gérer
                         </a>
                     </td>
                 </tr>

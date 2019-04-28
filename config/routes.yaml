@@ -23,3 +23,49 @@ add_stock:
     controller: App\Controller\AddStockController::index
     requirements:
         id: "[^/]+"
+
+manage_book_stock:
+    path: /manage/book/stock/{id}
+    controller: App\Controller\ManageBookStockController::index
+    requirements:
+        id: "[^/]+"
+
+read_employees:
+    path: /employees/read
+    controller: App\Controller\ReadEmployeesController::index
+
+add_employee:
+    path: /employees/add
+    controller: App\Controller\AddEmployeeController::index
+
+update_employee:
+    path: /employees/update/{id}
+    controller: App\Controller\UpdateEmployeeController::index
+    requirements:
+        id: "[^/]+"
+
+update_customer:
+    path: /customer/update/{id}
+    controller: App\Controller\UpdateCustomerController::index
+    requirements:
+        id: "[^/]+"
+
+read_subscription:
+    path: /subscription/read
+    controller: App\Controller\ReadSubscriptionsController::index
+
+add_subscription:
+    path: /subscription/add
+    controller: App\Controller\AddSubscriptionController::index
+
+update_subscription:
+    path: /subscription/update/{id}
+    controller: App\Controller\UpdateSubscriptionController::index
+    requirements:
+        id: "[^/]+"
+
+add_subscription_to_customer:
+    path: /subscription/add/customer/{id}
+    controller: App\Controller\AddSubscriptionToCustomer::index
+    requirements:
+        id: "[^/]+"

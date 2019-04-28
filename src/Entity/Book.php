@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,7 +34,7 @@ class Book
     private $publicationDate;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=10000, nullable=true)
      */
     private $description;
 
@@ -50,6 +52,16 @@ class Book
      * @ORM\Column(type="string", length=255)
      */
     private $idApi;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\StockMoving", mappedBy="book")
+     */
+    private $stockMoving;
+
+    public function __construct()
+    {
+        $this->stockMoving = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -136,6 +148,37 @@ class Book
     public function setIdApi(string $idApi): self
     {
         $this->idApi = $idApi;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|StockMoving[]
+     */
+    public function getStockMoving(): Collection
+    {
+        return $this->stockMoving;
+    }
+
+    public function addStockMoving(StockMoving $stockMoving): self
+    {
+        if (!$this->stockMoving->contains($stockMoving)) {
+            $this->stockMoving[] = $stockMoving;
+            $stockMoving->setBook($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStockMoving(StockMoving $stockMoving): self
+    {
+        if ($this->stockMoving->contains($stockMoving)) {
+            $this->stockMoving->removeElement($stockMoving);
+            // set the owning side to null (unless already changed)
+            if ($stockMoving->getBook() === $this) {
+                $stockMoving->setBook(null);
+            }
+        }
 
         return $this;
     }

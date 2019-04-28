@@ -47,4 +47,30 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findEmployees()
+    {
+
+
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.roles like  :val ')
+            ->orWhere('u.roles like  :val2 ')
+            ->setParameter('val', '%ROLE_SUPER_ADMIN%')
+            ->setParameter('val2', '%ROLE_ADMIN%')
+            ->orderBy('u.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function findCustomers()
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.roles like  :val ')
+            ->setParameter('val', '%ROLE_USER%')
+            ->orderBy('u.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -32,6 +34,46 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\StockMoving", mappedBy="user")
+     */
+    private $StokMovingAction;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $telephone;
+
+    /**
+     * @ORM\Column(type="json_array", nullable=true)
+     */
+    private $Address;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $EntryDate;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $departureDate;
+
+    public function __construct()
+    {
+        $this->StokMovingAction = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -109,5 +151,108 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|StockMoving[]
+     */
+    public function getStokMovingAction(): Collection
+    {
+        return $this->StokMovingAction;
+    }
+
+    public function addStokMovingAction(StockMoving $stokMovingAction): self
+    {
+        if (!$this->StokMovingAction->contains($stokMovingAction)) {
+            $this->StokMovingAction[] = $stokMovingAction;
+            $stokMovingAction->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStokMovingAction(StockMoving $stokMovingAction): self
+    {
+        if ($this->StokMovingAction->contains($stokMovingAction)) {
+            $this->StokMovingAction->removeElement($stokMovingAction);
+            // set the owning side to null (unless already changed)
+            if ($stokMovingAction->getUser() === $this) {
+                $stokMovingAction->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(?string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(?string $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getAddress()
+    {
+        return $this->Address;
+    }
+
+    public function setAddress($Address): self
+    {
+        $this->Address = $Address;
+
+        return $this;
+    }
+
+    public function getEntryDate(): ?\DateTimeInterface
+    {
+        return $this->EntryDate;
+    }
+
+    public function setEntryDate(?\DateTimeInterface $EntryDate): self
+    {
+        $this->EntryDate = $EntryDate;
+
+        return $this;
+    }
+
+    public function getDepartureDate(): ?\DateTimeInterface
+    {
+        return $this->departureDate;
+    }
+
+    public function setDepartureDate(?\DateTimeInterface $departureDate): self
+    {
+        $this->departureDate = $departureDate;
+
+        return $this;
     }
 }

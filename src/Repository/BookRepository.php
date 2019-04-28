@@ -46,5 +46,14 @@ class BookRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+    public function findOneById($value): ?Book
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 
 }
