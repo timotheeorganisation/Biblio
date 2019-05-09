@@ -55,7 +55,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-yellow sidebar-mini">
+<body class="hold-transition skin-yellow   {% if is_granted('ROLE_ADMIN') %} sidebar-mini {% else %} sidebar-collapse {% endif %}">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -66,15 +66,16 @@ desired effect
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Biblio</b></span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+      {% if is_granted('ROLE_ADMIN') %}  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>  {% endif %}
+
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -283,6 +284,7 @@ desired effect
             </a>
             <ul class="treeview-menu">
               <li><a href="{{ path('read_customers') }}">Liste des clients</a></li>
+              <li><a href="{{ path('read_borrow') }}">Emprunts</a></li>
               <li><a href="{{ path('read_subscription') }}">Abonnements</a></li>
             </ul>
           </li>

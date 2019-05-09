@@ -1,0 +1,56 @@
+{% extends 'style/starter.html.twig' %}
+{% block css %}
+    <link rel="stylesheet"
+          href="{{ asset('style/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+{% endblock %}
+{% block header %}<a href="{{ path('add_customer') }}" class="btn btn-success">Nouveau Client</a> {% endblock %}
+{% block content %}
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur(s)</th>
+                <th>Publication</th>
+                <th>Abonnement</th>
+                <th>Gérer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>  {{ customer.email }}
+                    </td>
+                    <td>{% for role in customer.roles %}
+                            {{ role }}
+                        {% endfor %}</td>
+                    <td><a href="{{ path('add_subscription_to_customer', { 'id' : customer.id}) }}" class="btn btn-warning">Abonnement</a></td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ path('update_customer', {'id': customer.id} ) }}">Gérer
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('style/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('style/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+    </script>
+{% endblock %}

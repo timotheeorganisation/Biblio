@@ -2,7 +2,7 @@
 
  {% block header %}
 GROOIN GROIN GROIN {{ app.user.roles[0] }}
-     {% if is_granted('ROLE_SUPER_ADMIN') %}
+     {% if  is_granted('ROLE_SUPER_ADMIN') %}
          <a href="{{ path('app_logout') }}">tu es SUP admin</a>
      {% endif %}
      {% if is_granted('ROLE_ADMIN') %}
@@ -14,19 +14,166 @@ GROOIN GROIN GROIN {{ app.user.roles[0] }}
  {% endblock %}
 
  {% block content %}
-     <div class="col-lg-3 col-xs-6">
-         <!-- small box -->
-         <div class="small-box bg-aqua">
-             <div class="inner">
-                 <h3>150</h3>
-
-                 <p>New Orders</p>
+     <div class="row">
+         <div class="col-xs-12">
+             <div class="box box-default">
+                 <div class="box-header with-border">
+                     <h3 class="box-title">Réserver Livres</h3>
+                 </div>
+                 <div class="box-body">
+                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                         Launch Default Modal
+                     </button>
+                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
+                         Réserver un livre
+                     </button>
+                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
+                         Réclamation au personnel
+                     </button>
+                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning">
+                         Launch Warning Modal
+                     </button>
+                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success">
+                         Launch Success Modal
+                     </button>
+                 </div>
              </div>
-             <div class="icon">
-                 <i class="ion ion-bag"></i>
-             </div>
-             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
          </div>
      </div>
-     ceci est un groingroingroingroingrn
+
+     <div class="modal modal-info fade" id="modal-info">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Info Modal</h4>
+                 </div>
+                 <div class="modal-body">
+                     {{ render(controller('App\\Controller\\ReservationController::index')) }}
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-outline">Save changes</button>
+                 </div>
+             </div>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+     </div>
+
+
+     <h1>Emprunts en cours</h1>
+     <div class="row">
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Messages</span>
+                     <span class="info-box-number">1,410</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Bookmarks</span>
+                     <span class="info-box-number">410</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Uploads</span>
+                     <span class="info-box-number">13,648</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Likes</span>
+                     <span class="info-box-number">93,139</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+     </div>
+
+
+<h1>Réservations en cours</h1>
+     <div class="row">
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Messages</span>
+                     <span class="info-box-number">1,410</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Bookmarks</span>
+                     <span class="info-box-number">410</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Uploads</span>
+                     <span class="info-box-number">13,648</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-3 col-sm-6 col-xs-12">
+             <div class="info-box">
+                 <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+
+                 <div class="info-box-content">
+                     <span class="info-box-text">Likes</span>
+                     <span class="info-box-number">93,139</span>
+                 </div>
+                 <!-- /.info-box-content -->
+             </div>
+             <!-- /.info-box -->
+         </div>
+         <!-- /.col -->
+     </div>
+
  {% endblock %}

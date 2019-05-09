@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -232,24 +233,24 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getEntryDate(): ?\DateTimeInterface
+    public function getEntryDate(): ?DateTimeInterface
     {
         return $this->EntryDate;
     }
 
-    public function setEntryDate(?\DateTimeInterface $EntryDate): self
+    public function setEntryDate(?DateTimeInterface $EntryDate): self
     {
         $this->EntryDate = $EntryDate;
 
         return $this;
     }
 
-    public function getDepartureDate(): ?\DateTimeInterface
+    public function getDepartureDate(): ?DateTimeInterface
     {
         return $this->departureDate;
     }
 
-    public function setDepartureDate(?\DateTimeInterface $departureDate): self
+    public function setDepartureDate(?DateTimeInterface $departureDate): self
     {
         $this->departureDate = $departureDate;
 

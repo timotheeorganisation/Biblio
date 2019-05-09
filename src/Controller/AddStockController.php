@@ -9,6 +9,7 @@ use App\Repository\StockMovingRepository;
 use Circle\RestClientBundle\Exceptions\OperationTimedOutException;
 use Circle\RestClientBundle\Services\RestClient;
 use Circle\RestClientBundle\Tests\Unit\Services\RestClientTest;
+use DateTime;
 use Doctrine\DBAL\Types\IntegerType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -58,7 +59,7 @@ class AddStockController extends AbstractController
                 $book = new Book();
                 $book->setDescription($description);
                 $book->setLabel($titre);
-                $book->setPublicationDate(new \DateTime('now'));
+                $book->setPublicationDate(new DateTime('now'));
                 ///  $book->setPublicationDate(\DateTime::createFromFormat('Y-d-m', $datePubliciation));
                 $book->setIdApi($id);
                 $book->setImage($image);
@@ -70,7 +71,7 @@ class AddStockController extends AbstractController
                 $stockMoving = new StockMoving();
                 $stockMoving->setBook($book);
                 $stockMoving->setUser($this->getUser());
-                $stockMoving->setDate(new \DateTime('now'));
+                $stockMoving->setDate(new DateTime('now'));
                 $stockMoving->setType("Entrée");
                 $stockMoving->setQuantity($stock);
                 $em->persist($stockMoving);
@@ -85,7 +86,7 @@ class AddStockController extends AbstractController
                 $stockMoving = new StockMoving();
                 $stockMoving->setBook($book);
                 $stockMoving->setUser($this->getUser());
-                $stockMoving->setDate(new \DateTime('now'));
+                $stockMoving->setDate(new DateTime('now'));
                 $stockMoving->setType("Entrée");
                 $stockMoving->setQuantity($stock);
                 $em->persist($stockMoving);

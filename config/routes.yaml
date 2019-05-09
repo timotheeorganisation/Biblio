@@ -15,57 +15,71 @@ app_logout:
     methods: GET
 
 stocks:
-    path: /stocks
+    path: /admin/stocks
     controller: App\Controller\StocksController::index
 
 add_stock:
-    path: /stocks/add/{id}
+    path: /admin/stocks/add/{id}
     controller: App\Controller\AddStockController::index
     requirements:
         id: "[^/]+"
 
 manage_book_stock:
-    path: /manage/book/stock/{id}
+    path: /admin/manage/book/stock/{id}
     controller: App\Controller\ManageBookStockController::index
     requirements:
         id: "[^/]+"
 
 read_employees:
-    path: /employees/read
+    path: /admin/employees/read
     controller: App\Controller\ReadEmployeesController::index
 
 add_employee:
-    path: /employees/add
+    path: /admin/employees/add
     controller: App\Controller\AddEmployeeController::index
 
 update_employee:
-    path: /employees/update/{id}
+    path: /admin/employees/update/{id}
     controller: App\Controller\UpdateEmployeeController::index
     requirements:
         id: "[^/]+"
 
 update_customer:
-    path: /customer/update/{id}
+    path: /admin/customer/update/{id}
     controller: App\Controller\UpdateCustomerController::index
     requirements:
         id: "[^/]+"
 
 read_subscription:
-    path: /subscription/read
+    path: /admin/subscription/read
     controller: App\Controller\ReadSubscriptionsController::index
 
 add_subscription:
-    path: /subscription/add
+    path: /admin/subscription/add
     controller: App\Controller\AddSubscriptionController::index
 
 update_subscription:
-    path: /subscription/update/{id}
+    path: /admin/subscription/update/{id}
     controller: App\Controller\UpdateSubscriptionController::index
     requirements:
         id: "[^/]+"
 
 add_subscription_to_customer:
-    path: /subscription/add/customer/{id}
+    path: /admin/subscription/add/customer/{id}
     controller: App\Controller\AddSubscriptionToCustomer::index
+    requirements:
+        id: "[^/]+"
+
+read_borrow:
+    path: /admin/borrow/read
+    controller: App\Controller\ReadBorrowController::index
+
+add_borrow:
+    path: /admin/borrow/add
+    controller: App\Controller\AddBorrowController::index
+
+delete_borrow:
+    path: /admin/borrow/delete/{id}
+    controller: App\Controller\DeleteBorrowController::index
     requirements:
         id: "[^/]+"

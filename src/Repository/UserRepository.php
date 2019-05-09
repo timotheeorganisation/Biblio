@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\ResultSetMapping;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -65,12 +66,11 @@ class UserRepository extends ServiceEntityRepository
     public function findCustomers()
     {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.roles like  :val ')
-            ->setParameter('val', '%ROLE_USER%')
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-            ;
+                    ->andWhere('u.roles like  :val ')
+                    ->setParameter('val', '%ROLE_USER%')
+                    ->orderBy('u.id', 'ASC')
+                    ->setMaxResults(10)
+                    ->getQuery()
+                    ->getResult();
     }
 }

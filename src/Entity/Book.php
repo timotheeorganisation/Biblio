@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -92,12 +93,12 @@ class Book
         return $this;
     }
 
-    public function getPublicationDate(): ?\DateTimeInterface
+    public function getPublicationDate(): ?DateTimeInterface
     {
         return $this->publicationDate;
     }
 
-    public function setPublicationDate(?\DateTimeInterface $publicationDate): self
+    public function setPublicationDate(?DateTimeInterface $publicationDate): self
     {
         $this->publicationDate = $publicationDate;
 

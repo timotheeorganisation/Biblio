@@ -36,7 +36,6 @@ class BookRepository extends ServiceEntityRepository
     }*/
 
 
-
     public function findOneByIdApi($value): ?Book
     {
         return $this->createQueryBuilder('b')

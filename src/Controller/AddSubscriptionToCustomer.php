@@ -8,13 +8,14 @@ use App\Form\AddSubsciptionType;
 use App\Form\AddSubscriptionToCustomerType;
 use App\Repository\SubscriptionRepository;
 use App\Repository\UserRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class AddSubscriptionToCustomer extends AbstractController
 {
-    public function index(FormFactoryInterface $formFactory, Request $request)
+    public function index(int $id, FormFactoryInterface $formFactory, Request $request, UserRepository $userRepository)
     {
         $form = $formFactory->createBuilder(AddSubscriptionToCustomerType::class)->getForm();
 
@@ -24,8 +25,8 @@ class AddSubscriptionToCustomer extends AbstractController
             $subscription = $form->getData();
            // $role =  $form['Subscription']->getData();
             //$subscription->setRoles($role);
-            $subscription->setUser($this->getUser());
-            $subscription->setDate(new \DateTime('now'));
+            $subscription->setUser($userRepository->find($id));
+            $subscription->setDate(new DateTime('now'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($subscription);
             $em->flush();
