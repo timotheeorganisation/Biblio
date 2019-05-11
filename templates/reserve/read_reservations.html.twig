@@ -1,0 +1,61 @@
+{% extends 'style/starter.html.twig' %}
+{% block css %}
+    <link rel="stylesheet"
+          href="{{ asset('style/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="box-header ui-sortable-handle">
+       <i class="ion ion-clipboard"></i>
+       <h1 class="box-title">Réservations en cours</h1>
+    </div>    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur(s)</th>
+                <th>Date de Réservation</th>
+                <th>Client</th>
+                <th>Gérer</th>
+                <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.book.label }}</td>
+                    <td>  {{ reservation.book.author }}</td>
+                    <td>{{ reservation.reserveDate |date('Y-m-d') }}</td>
+                    <td> {{ reservation.user.id }} - {{ reservation.user.firstName }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ path('update_reservation', {'id': reservation.id} ) }}">Passer en Emprunt
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="{{ path('delete_reservation', {'id': reservation.id} ) }}">Supprimer
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('style/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('style/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable();
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+    </script>
+{% endblock %}

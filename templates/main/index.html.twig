@@ -1,7 +1,10 @@
 {% extends 'style/starter.html.twig' %}
-
+{% block head_css %}
+    <script rel="stylesheet"{{ asset('style/bower_components/select2/dist/css/select2.min.css') }}></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet"/>
+{% endblock %}
  {% block header %}
-GROOIN GROIN GROIN {{ app.user.roles[0] }}
+     GROOIN GROIN GROIN {{ app.user.roles[0] }}
      {% if  is_granted('ROLE_SUPER_ADMIN') %}
          <a href="{{ path('app_logout') }}">tu es SUP admin</a>
      {% endif %}
@@ -47,14 +50,15 @@ GROOIN GROIN GROIN {{ app.user.roles[0] }}
                  <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                          <span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title">Info Modal</h4>
+                     <h4 class="modal-title">Je veux réserver un Livre </h4>
+                     <i class="fa fa-fw fa-hand-paper-o"></i>Vous aurez alors une semaine pour venir récupérer ce livre
+                     dans notre Bibliothèque
                  </div>
                  <div class="modal-body">
                      {{ render(controller('App\\Controller\\ReservationController::index')) }}
                  </div>
                  <div class="modal-footer">
                      <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                     <button type="button" class="btn btn-outline">Save changes</button>
                  </div>
              </div>
              <!-- /.modal-content -->
@@ -65,115 +69,27 @@ GROOIN GROIN GROIN {{ app.user.roles[0] }}
 
      <h1>Emprunts en cours</h1>
      <div class="row">
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+         {{ render(controller('App\\Controller\\ReadCustomerBorrowController::index')) }}
 
-                 <div class="info-box-content">
-                     <span class="info-box-text">Messages</span>
-                     <span class="info-box-number">1,410</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
 
-                 <div class="info-box-content">
-                     <span class="info-box-text">Bookmarks</span>
-                     <span class="info-box-number">410</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
-
-                 <div class="info-box-content">
-                     <span class="info-box-text">Uploads</span>
-                     <span class="info-box-number">13,648</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
-
-                 <div class="info-box-content">
-                     <span class="info-box-text">Likes</span>
-                     <span class="info-box-number">93,139</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
      </div>
 
 
-<h1>Réservations en cours</h1>
+     <h1>Réservations en cours</h1>
      <div class="row">
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+         {{ render(controller('App\\Controller\\ReadCustomerReservationController::index')) }}
 
-                 <div class="info-box-content">
-                     <span class="info-box-text">Messages</span>
-                     <span class="info-box-number">1,410</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
 
-                 <div class="info-box-content">
-                     <span class="info-box-text">Bookmarks</span>
-                     <span class="info-box-number">410</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
-
-                 <div class="info-box-content">
-                     <span class="info-box-text">Uploads</span>
-                     <span class="info-box-number">13,648</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
-         <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="info-box">
-                 <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
-
-                 <div class="info-box-content">
-                     <span class="info-box-text">Likes</span>
-                     <span class="info-box-number">93,139</span>
-                 </div>
-                 <!-- /.info-box-content -->
-             </div>
-             <!-- /.info-box -->
-         </div>
-         <!-- /.col -->
      </div>
 
  {% endblock %}
+{% block javascripts %}
+
+    <script src="{{ asset('style/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('style/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+    <script>    $(document).ready(function () {
+            $('.js-example-basic-single').select2()
+        });
+    </script>
+
+{% endblock %}

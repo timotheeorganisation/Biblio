@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Reserve;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -47,4 +48,46 @@ class ReserveRepository extends ServiceEntityRepository
         ;
     }
     */
+    //Retourne toutes les reservations en cours
+    public function findAllCurrentReservation()
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.state = 0')
+            ->orderBy('r.reserveDate', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    // retourne liste des livres actuellement réservés par l'utilisateur.
+    public function findUserReservation(User $user)
+    {
+        $date = new \DateTime('now');
+        $date->add(new \DateInterval('P2D'));
+
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.user = :val')
+            ->andWhere('r.reserveDate <= CURRENT_DATE()')
+            ->andWhere('r.reserveDate <= :val2')
+            ->setParameter('val', $user)
+            ->setParameter('val2', $date)
+            ->orderBy('r.reserveDate', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+        public function countUserRes(User $user) {
+            $date = new \DateTime('now');
+            $date->add(new \DateInterval('P2D'));
+
+            return $this->createQueryBuilder('r')
+            ->select('COUNT(r)')
+            ->andWhere('r.user = :val')
+            ->andWhere('r.reserveDate <= CURRENT_DATE()')
+            ->andWhere('r.reserveDate <= :val2')
+            ->setParameter('val', $user)
+            ->setParameter('val2', $date)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

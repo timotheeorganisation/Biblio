@@ -8,12 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ReadBookController extends AbstractController
 {
-    /**
-     * @Route("/read/book", name="read_book")
-     */
+    //affiche tous les livres de la base de données en stock
     public function index(BookRepository $bookRepository)
     {
-    $rep =$bookRepository->findAll();
+        $rep = $bookRepository->findAll();
 
         return $this->render('stocks/read_books.html.twig', [
             'controller_name' => 'ReadBookController',

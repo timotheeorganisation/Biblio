@@ -74,12 +74,37 @@ read_borrow:
     path: /admin/borrow/read
     controller: App\Controller\ReadBorrowController::index
 
+read_book:
+    path: /admin/read/book
+    controller: App\Controller\ReadBookController::index
+
+
 add_borrow:
     path: /admin/borrow/add
     controller: App\Controller\AddBorrowController::index
 
+reservation:
+    path: /reservation
+    controller: App\Controller\ReservationController::index
+
 delete_borrow:
     path: /admin/borrow/delete/{id}
     controller: App\Controller\DeleteBorrowController::index
+    requirements:
+        id: "[^/]+"
+
+read_reservations:
+    path: /admin/read/reservations
+    controller: App\Controller\ReadReservationsController::index
+
+update_reservation:
+    path: /admin/reservations/update/{id}
+    controller: App\Controller\UpdateReservationController::index
+    requirements:
+        id: "[^/]+"
+
+delete_reservation:
+    path: /admin/reservation/delete/{id}
+    controller: App\Controller\DeleteReservationController::index
     requirements:
         id: "[^/]+"

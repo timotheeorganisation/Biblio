@@ -1,0 +1,13 @@
+{% for borrow in borrowing %}
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <img class="info-box-icon img-responsive" src="{{ borrow.book.image }}">
+            <div class="info-box-content">
+                <span class="info-box-number">{{ borrow.book.label }}</span>
+                <span class="info-box-text">à rendre avant le {{ borrow.startDate|date_modify("+21 day")|date("d/m/Y") }}</span>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}

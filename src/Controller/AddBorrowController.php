@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Form\AddBorrowType;
@@ -17,14 +18,13 @@ class AddBorrowController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             ///vérifier si livre a du stock disponible
-            //
+
             $borrow = $form->getData();
             $borrow->setStartDate(new DateTime('now'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($borrow);
             $em->flush();
             $sendMail->sendMail();
-
 
             return $this->redirectToRoute('read_borrow');
         }

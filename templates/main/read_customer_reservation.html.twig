@@ -1,0 +1,11 @@
+{% for reservation in reservations %}
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <img class="info-box-icon img-responsive" src="{{ reservation.book.image }}">
+            <div class="info-box-content">
+                <span class="info-box-number">{{ reservation.book.label }}</span>
+                <span class="info-box-text">à retirer avant le {{ reservation.reserveDate|date_modify("+2 day")|date("d/m/Y") }}</span>
+            </div>
+        </div>
+    </div>
+{% endfor %}

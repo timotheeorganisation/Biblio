@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Borrow;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -35,7 +36,6 @@ class BorrowRepository extends ServiceEntityRepository
         ;
     }
     */
-
     /*
     public function findOneBySomeField($value): ?Borrow
     {
@@ -46,5 +46,16 @@ class BorrowRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+    */  // retourne liste des livres actuellement réservés par l'utilisateur.
+    public function findUserBorrowing(User $user)
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.user = :val')
+            ->andWhere('r.returnDate is null')
+            ->setParameter('val', $user)
+        //->setParameter('val2', $date)
+            ->orderBy('r.startDate', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }
