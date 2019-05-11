@@ -2,31 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95d745b6-2e5f-4106-9325-08598c665c20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/DeleteReservationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ReadCustomerBorrowController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ReadCustomerReservationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ReadReservationsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/UpdateReservationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ReservationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/too_much_reservation.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/reserve/read_reservations.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AddBorrowController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AddBorrowController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReadBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReadBookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BorrowRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BorrowRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ReserveRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ReserveRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/SendMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/borrow/add_borrow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/borrow/add_borrow.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customers/add_customer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customers/add_customer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/reservation_modal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/reservation_modal.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/style/starter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/style/starter.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/subscription/add_subscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subscription/add_subscription.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/style/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/style/yarn.lock" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/borrow/add_borrow.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+            <state relative-caret-position="91">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -86,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/ReadSubscriptionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="150">
+              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
               <folding>
                 <element signature="e#36#78#0#PHP" expanded="true" />
               </folding>
@@ -96,19 +77,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/main/reservation_modal.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="357">
+              <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="5" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/reservation_modal.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/too_much_reservation.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="131" selection-start-line="2" selection-start-column="131" selection-end-line="2" selection-end-column="131" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="60">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -125,41 +133,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="96" column="34" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/DeleteBorrowController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="28" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/DeleteReservationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-              <folding>
-                <element signature="e#36#72#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Query</find>
       <find>ad</find>
       <find>date</find>
       <find>Salariés</find>
@@ -189,6 +166,7 @@
       <find>reserve</find>
       <find>read_b</find>
       <find>Admin</find>
+      <find>datata</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,10 +213,8 @@
         <option value="$PROJECT_DIR$/src/Controller/ReadBookController.php" />
         <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/ReadCustomerReservationController.php" />
-        <option value="$PROJECT_DIR$/templates/main/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/ReadCustomerBorrowController.php" />
         <option value="$PROJECT_DIR$/src/Repository/BorrowRepository.php" />
-        <option value="$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/ReservationController.php" />
         <option value="$PROJECT_DIR$/templates/main/too_much_reservation.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UpdateReservationController.php" />
@@ -247,12 +223,14 @@
         <option value="$PROJECT_DIR$/src/Repository/ReserveRepository.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/DeleteReservationController.php" />
-        <option value="$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig" />
         <option value="$PROJECT_DIR$/templates/main/reservation_modal.html.twig" />
         <option value="$PROJECT_DIR$/templates/reserve/read_reservations.html.twig" />
         <option value="$PROJECT_DIR$/templates/customers/add_customer.html.twig" />
         <option value="$PROJECT_DIR$/templates/subscription/add_subscription.html.twig" />
         <option value="$PROJECT_DIR$/templates/borrow/add_borrow.html.twig" />
+        <option value="$PROJECT_DIR$/templates/main/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig" />
+        <option value="$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig" />
       </list>
     </option>
   </component>
@@ -390,60 +368,7 @@
             <path>
               <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="dev" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="borrow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="customers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
@@ -455,18 +380,13 @@
               <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biblio" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="stocks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Biblio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Biblio" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -482,6 +402,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -555,7 +476,7 @@
       <workItem from="1557504859329" duration="2929000" />
       <workItem from="1557564458085" duration="5548000" />
       <workItem from="1557570924891" duration="597000" />
-      <workItem from="1557574221084" duration="16181000" />
+      <workItem from="1557574221084" duration="17336000" />
     </task>
     <task id="LOCAL-00001" summary="crud abonnnements et users">
       <created>1556466670076</created>
@@ -568,7 +489,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195279000" />
+    <option name="totallyTimeSpent" value="196434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
@@ -578,7 +499,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.48123324" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -587,7 +508,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.21983914" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23458445" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32974428" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -628,20 +549,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="crud abonnnements et users" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/Book.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -793,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="71" column="76" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/BorrowRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -845,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="98" selection-start-line="7" selection-start-column="98" selection-end-line="7" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ReadCustomerReservationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -879,13 +772,6 @@
           <folding>
             <element signature="e#36#65#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/too_much_reservation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="131" selection-start-line="2" selection-start-column="131" selection-end-line="2" selection-end-column="131" />
         </state>
       </provider>
     </entry>
@@ -978,30 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ReadSubscriptionsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#36#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/reservation_modal.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/reserve/read_reservations.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1016,10 +878,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/style/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="990" column="6" selection-start-line="990" selection-end-line="990" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ReadSubscriptionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+          <folding>
+            <element signature="e#36#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/style/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/borrow/add_borrow.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="91">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/too_much_reservation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="131" selection-start-line="2" selection-start-column="131" selection-end-line="2" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/reservation_modal.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/read_customer_borrow.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/read_customer_reservation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
         </state>
       </provider>
     </entry>

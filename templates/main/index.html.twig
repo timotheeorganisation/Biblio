@@ -66,16 +66,25 @@
          <!-- /.modal-dialog -->
      </div>
 
+     <section class="content-header">
+         <h1>
+             Emprunts en cours
+             <small>Veuillez respecter la date de retour indiquée</small>
+         </h1>
+     </section>
 
-     <h1>Emprunts en cours</h1>
      <div class="row">
          {{ render(controller('App\\Controller\\ReadCustomerBorrowController::index')) }}
 
 
      </div>
 
-
-     <h1>Réservations en cours</h1>
+     <section class="content-header">
+         <h1>
+             Réservations en cours
+             <small>Vous avez deux jours pour récupérer votre livre.</small>
+         </h1>
+     </section>
      <div class="row">
          {{ render(controller('App\\Controller\\ReadCustomerReservationController::index')) }}
 

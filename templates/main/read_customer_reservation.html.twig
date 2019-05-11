@@ -1,3 +1,11 @@
+{% if reservations is empty %}
+    <div class="callout callout-info">
+        <h4>Pas de réservations !</h4>
+        <p>Vous pouvez dés maintenant réserver un livre en cliquant sur le bouton "Réserver un Livre". <br>
+            Nous vous le réseverons et vous pourrez alors venir le chercher dans les
+        deux prochains jours.</p>
+    </div>
+{% endif %}
 {% for reservation in reservations %}
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
